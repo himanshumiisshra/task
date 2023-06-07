@@ -1,0 +1,30 @@
+<div class="home">
+    <h1>Register For Perfection Geeks Tehnologies</h1>
+    
+    <br/>
+
+    <div class="login">
+        <mat-form-field>
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" 
+          [formControl]="email" required>
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    
+    
+          <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+    
+        <button mat-raised-button color="warn">Login</button>
+        
+        </mat-form-field>
+        <mat-checkbox class="example-margin">Accept user agrement</mat-checkbox>
+      </div>
+
+    <button mat-stroked-button color="accent" [routerLink]="['/login']">Register</button>
+    
+
+    <router-outlet></router-outlet>
+    </div>
